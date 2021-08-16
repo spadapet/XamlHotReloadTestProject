@@ -4,6 +4,6 @@ obj/
 Debug/
 Release/
 packages/
+MigrationBackup/
 
 *.user
-
