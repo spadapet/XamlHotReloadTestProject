@@ -33,6 +33,7 @@
             <Button Content="Add" Command="{Binding AddCommand}" />
             <Button Content="Clear" Command="{Binding ClearCommand}" />
             <Button Content="Test" Click="OnTest" />
+            <local:MyButton Content="{Binding Foo1, RelativeSource={RelativeSource Mode=Self}}" />
         </StackPanel>
     </Grid>
 </Window>
