@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using System.Diagnostics;
-using System.Windows;
-using System.Windows.Controls;
 
-namespace WpfNet6
+namespace WinUiDesk
 {
     public class MyButton : Button
     {

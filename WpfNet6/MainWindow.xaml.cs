@@ -7,6 +7,11 @@ namespace WpfNet6
     {
         public MainWindowVM ViewModel { get; } = new MainWindowVM();
 
+        public string Foo => "Foo";
+        //public string Bar => "Bar";
+        //public string Baz => "Baz";
+        //public string Goo => "Goo";
+
         public MainWindow()
         {
             this.InitializeComponent();

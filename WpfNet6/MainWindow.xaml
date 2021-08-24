@@ -14,15 +14,33 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock x:Name="introText" FontSize="24" Text="{Binding Text}" />
-        <ListView Grid.Row="1" Margin="0,8,0,0" ItemsSource="{Binding People}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Age" Width="100" DisplayMemberBinding="{Binding Age}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <TextBlock x:Name="introText" FontSize="24" Text="{Binding Foo, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ListView Margin="0,8,0,0" ItemsSource="{Binding People}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Age" Width="100" DisplayMemberBinding="{Binding Age}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <local:MyList Grid.Column="2">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="200" Height="24">
+                            <Border Background="LightGreen">
+                                <TextBlock Text="{Binding}" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </local:MyList>
+        </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,8,0,0">
             <StackPanel.Resources>
                 <Style TargetType="Button">
