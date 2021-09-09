@@ -1,4 +1,4 @@
-﻿namespace WinUiDesk
+﻿namespace WinUWP
 {
     public abstract class PropertyNotifier : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
     {

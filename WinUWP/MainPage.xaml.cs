@@ -1,13 +1,13 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace WinUiDesk
+namespace WinUWP
 {
-    public sealed partial class MainWindow : Window
+    public sealed partial class MainPage : Page
     {
         public MainWindowVM ViewModel { get; } = new MainWindowVM();
 
-        public MainWindow()
+        public MainPage()
         {
             this.InitializeComponent();
         }

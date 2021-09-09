@@ -1,4 +1,4 @@
-﻿namespace WinUiDesk
+﻿namespace WinUWP
 {
     public sealed class DelegateCommand : PropertyNotifier, System.Windows.Input.ICommand
     {

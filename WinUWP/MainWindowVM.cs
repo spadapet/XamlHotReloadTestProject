@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace WinUiDesk
+namespace WinUWP
 {
     public class MainWindowVM : PropertyNotifier
     {

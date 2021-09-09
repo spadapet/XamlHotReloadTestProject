@@ -1,12 +1,10 @@
 ﻿using Microsoft.UI.Xaml;
 using System;
 
-namespace WinUiDesk
+namespace WinUWP
 {
-    public partial class App : Application
+    sealed partial class App : Application
     {
-        private Window window;
-
         public static Random Random { get; } = new Random();
 
         public App()
@@ -16,8 +14,12 @@ namespace WinUiDesk
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            this.window = new MainWindow();
-            this.window.Activate();
+            if (Window.Current.Content == null)
+            {
+                Window.Current.Content = new MainPage();
+            }
+
+            Window.Current.Activate();
         }
     }
 }

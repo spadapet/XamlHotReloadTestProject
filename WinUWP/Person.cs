@@ -1,4 +1,4 @@
-﻿namespace WinUiDesk
+﻿namespace WinUWP
 {
     public class Person : PropertyNotifier
     {
