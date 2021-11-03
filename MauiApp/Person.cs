@@ -1,6 +1,4 @@
-﻿using WpfTools;
-
-namespace WpfNet6
+﻿namespace MauiApp5
 {
     public class Person : PropertyNotifier
     {

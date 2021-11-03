@@ -1,4 +1,4 @@
-﻿using ff.WpfTools;
+﻿using WpfTools;
 
 namespace WpfNetFx
 {

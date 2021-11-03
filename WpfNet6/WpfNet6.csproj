@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ff_wpf_tools" Version="1.0.0" />
+    <PackageReference Include="ff_wpf_tools" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

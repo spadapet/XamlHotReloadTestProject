@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "MauiApp.WinUI": {
-      "commandName": "MsixPackage",
-      "nativeDebugging": false
-    }
-  }
-}

@@ -1,11 +1,10 @@
-﻿using WpfTools;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace WpfNetFx
+namespace MauiApp5
 {
-    public class MainWindowVM : PropertyNotifier
+    public class MainViewModel : PropertyNotifier
     {
         public string Text => "Customers";
         //public string Text2 => "Managers";
@@ -13,7 +12,7 @@ namespace WpfNetFx
         private ObservableCollection<Person> people = new ObservableCollection<Person>();
         public IList<Person> People => this.people;
 
-        public MainWindowVM()
+        public MainViewModel()
         {
             this.People.Add(new Person()
             {
