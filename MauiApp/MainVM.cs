@@ -27,9 +27,16 @@ namespace MauiApp5
             });
         }
 
-        public ICommand AddCommand => new DelegateCommand(this.Add);
+        private int count = 0;
+        public int Count
+        {
+            get => this.count;
+            set => this.SetProperty(ref this.count, value);
+        }
 
-        private void Add()
+        public ICommand AddPersonCommand => new DelegateCommand(this.AddPerson);
+
+        private void AddPerson()
         {
             this.People.Add(new Person()
             {
@@ -38,15 +45,29 @@ namespace MauiApp5
             });
         }
 
-        //public ICommand AddCommand2 => new DelegateCommand(this.Add2);
+        //public ICommand AddPerson2Command => new DelegateCommand(this.AddPerson2);
 
-        //private void Add2()
+        //private void AddPerson2()
         //{
         //    this.People.Add(new Person()
         //    {
         //        Name = "New Person 2",
         //        Age = System.Random.Shared.Next(40, 60)
         //    });
+        //}
+
+        public ICommand AddCountCommand => new DelegateCommand(this.AddCount);
+
+        private void AddCount()
+        {
+            this.Count += 1;
+        }
+
+        //public ICommand AddCount2Command => new DelegateCommand(this.AddCount2);
+        //
+        //private void AddCount2()
+        //{
+        //    this.Count += 2;
         //}
 
         public ICommand ClearCommand => new DelegateCommand(p =>

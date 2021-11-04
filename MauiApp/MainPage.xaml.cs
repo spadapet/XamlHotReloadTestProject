@@ -6,21 +6,20 @@ namespace MauiApp5
     public partial class MainPage : ContentPage
 	{
         public MainViewModel ViewModel { get; } = new MainViewModel();
-		int count = 0;
 
 		public MainPage()
 		{
 			InitializeComponent();
 		}
 
-		private void OnCounterClicked(object sender, EventArgs e)
+		private void OnClicked(object sender, EventArgs args)
 		{
-			CounterLabel.Text = $"Current count: {++count}";
+			ViewModel.Count++;
 		}
 
-		//private void OnCounterClicked2(object sender, EventArgs e)
+		//private void OnClicked2(object sender, EventArgs args)
 		//{
-		//    CounterLabel.Text = $"Current count: {count += 2}";
+		//	ViewModel.Count += 2;
 		//}
 	}
 }

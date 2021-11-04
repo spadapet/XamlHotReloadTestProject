@@ -7,7 +7,7 @@
              BindingContext="{Binding ViewModel, Source={RelativeSource Mode=Self}}">
 
     <ScrollView>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*"
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
             <Label 
@@ -39,7 +39,7 @@
                 HorizontalOptions="Center" />
 
             <Label 
-                Text="Current count: 0"
+                Text="{Binding Count, StringFormat='Current count: {0}'}"
                 Grid.Row="2"
                 FontSize="18"
                 FontAttributes="Bold"
@@ -51,10 +51,20 @@
                 FontAttributes="Bold"
                 Grid.Row="3"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"
+                Command="{Binding AddCountCommand}" />
 
-            <Image Grid.Row="4"
+            <Button 
+                Text="Event handler"
+                FontAttributes="Bold"
+                Grid.Row="4"
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Center"
+                Clicked="OnClicked" />
+
+            <local:MyButton Grid.Row="5" Text="{Binding Foo1, Source={RelativeSource Mode=Self}}" />
+
+            <Image Grid.Row="6"
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 WidthRequest="250"
