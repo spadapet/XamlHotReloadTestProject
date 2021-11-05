@@ -5,6 +5,9 @@ namespace MauiApp5
 {
     public class MyButton : Button
     {
+        // public string Bar { get; set; }
+        // public string Baz { get; set; }
+
         public static readonly BindableProperty Foo1Property = BindableProperty.Create(
             "Foo1", typeof(string), typeof(MyButton), "Foo1 Default", propertyChanged: MyButton.Foo1Changed);
 

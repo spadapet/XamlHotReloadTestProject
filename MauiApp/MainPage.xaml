@@ -7,7 +7,7 @@
              BindingContext="{Binding ViewModel, Source={RelativeSource Mode=Self}}">
 
     <ScrollView>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*"
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*"
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
             <Label 
@@ -17,7 +17,7 @@
                 FontSize="32"
                 HorizontalOptions="Center" />
 
-            <ListView ItemsSource="{Binding People}">
+            <ListView Grid.Row="1" ItemsSource="{Binding People}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="{x:Type local:Person}">
                         <StackLayout>
@@ -32,7 +32,7 @@
 
             <Label 
                 Text="Welcome to .NET Multi-platform App UI"
-                Grid.Row="1"
+                Grid.Row="2"
                 SemanticProperties.HeadingLevel="Level1"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
@@ -40,7 +40,7 @@
 
             <Label 
                 Text="{Binding Count, StringFormat='Current count: {0}'}"
-                Grid.Row="2"
+                Grid.Row="3"
                 FontSize="18"
                 FontAttributes="Bold"
                 x:Name="CounterLabel"
@@ -49,7 +49,7 @@
             <Button 
                 Text="Click me"
                 FontAttributes="Bold"
-                Grid.Row="3"
+                Grid.Row="4"
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Center"
                 Command="{Binding AddCountCommand}" />
@@ -57,19 +57,19 @@
             <Button 
                 Text="Event handler"
                 FontAttributes="Bold"
-                Grid.Row="4"
+                Grid.Row="5"
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Center"
                 Clicked="OnClicked" />
 
-            <local:MyButton Grid.Row="5" Text="{Binding Foo1, Source={RelativeSource Mode=Self}}" />
+            <local:MyButton Grid.Row="6" Text="{Binding Foo1, Source={RelativeSource Mode=Self}}" TextColor="Red" />
 
-            <Image Grid.Row="6"
+            <!--<Image Grid.Row="7"
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 WidthRequest="250"
                 HeightRequest="310"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" />-->
 
         </Grid>
     </ScrollView>
