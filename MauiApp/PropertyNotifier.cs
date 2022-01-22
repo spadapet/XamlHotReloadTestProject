@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace MauiApp5
 {
     public abstract class PropertyNotifier : INotifyPropertyChanging, INotifyPropertyChanged
     {
-        public event PropertyChangingEventHandler PropertyChanging;
+        public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertiesChanging()
@@ -21,7 +20,7 @@ namespace MauiApp5
 
         protected void OnPropertyChanging(string name)
         {
-            this.PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(name));
+            this.PropertyChanging?.Invoke(this, new System.ComponentModel.PropertyChangingEventArgs(name));
         }
 
         protected void OnPropertyChanged(string name)

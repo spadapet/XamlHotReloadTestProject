@@ -10,7 +10,7 @@ namespace WpfNet6
         public string Text => "Customers";
         //public string Text2 => "Managers";
 
-        private ObservableCollection<Person> people = new ObservableCollection<Person>();
+        private readonly ObservableCollection<Person> people = new();
         public IList<Person> People => this.people;
 
         public MainWindowVM()

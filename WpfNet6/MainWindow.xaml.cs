@@ -7,10 +7,14 @@ namespace WpfNet6
     {
         public MainWindowVM ViewModel { get; } = new MainWindowVM();
 
+#pragma warning disable CA1822 // Mark members as static
+
         public string Foo => "Foo";
         //public string Bar => "Bar";
         //public string Baz => "Baz";
         //public string Goo => "Goo";
+
+#pragma warning restore CA1822 // Mark members as static
 
         public MainWindow()
         {
