@@ -1,4 +1,4 @@
-﻿namespace WinUWP
+﻿namespace WinUI3
 {
     public sealed class DelegateCommand : PropertyNotifier, System.Windows.Input.ICommand
     {

@@ -1,4 +1,4 @@
-﻿namespace WinUWP
+﻿namespace WinUI3
 {
     public abstract class PropertyNotifier : System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
     {

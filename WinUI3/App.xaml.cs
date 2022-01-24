@@ -1,7 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
 using System;
 
-namespace WinUWP
+namespace WinUI3
 {
     sealed partial class App : Application
     {
@@ -14,12 +14,7 @@ namespace WinUWP
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-            if (Window.Current.Content == null)
-            {
-                Window.Current.Content = new MainPage();
-            }
-
-            Window.Current.Activate();
+            new MainWindow().Activate();
         }
     }
 }

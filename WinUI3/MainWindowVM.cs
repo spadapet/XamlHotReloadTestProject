@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
 
-namespace WinUWP
+namespace WinUI3
 {
     public class MainWindowVM : PropertyNotifier
     {
         public string Text => "Customers";
         //public string Text2 => "Managers";
 
-        private ObservableCollection<Person> people = new ObservableCollection<Person>();
+        private List<Person> people = new List<Person>();
         public IList<Person> People => this.people;
 
         public MainWindowVM()

@@ -1,4 +1,4 @@
-﻿namespace WinUWP
+﻿namespace WinUI3
 {
     public class Person : PropertyNotifier
     {

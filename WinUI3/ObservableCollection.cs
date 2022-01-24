@@ -1,20 +1,20 @@
-﻿using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Interop;
+﻿using Microsoft.UI.Xaml.Interop;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace WinUWP
+namespace WinUI3
 {
+#if false
     // .NET collection types are tightly coupled with WUX types - e.g., ObservableCollection<T>
     // maps to WUX.INotifyCollectionChanged, and creates WUX.NotifyCollectionChangedEventArgs
     // when raising its INCC event.  This is a problem because we've switched everything else over
     // to use MUX types, such that creating WUX types raises an RPC_E_WRONG_THREAD error
     // due to DXamlCore not being initialized.  For the purposes of our tests, we're providing
     // our own implementation of ObservableCollection<T> that implements MUX.INotifyCollectionChanged.
-    public class ObservableCollection<T> : Collection<T>, Microsoft.UI.Xaml.Interop.INotifyCollectionChanged, INotifyPropertyChanged
+    public class ObservableCollection<T> : Collection<T>, System.Collections.Specialized.INotifyCollectionChanged, INotifyPropertyChanged
     {
         private ReentrancyGuard reentrancyGuard = null;
 
@@ -39,7 +39,7 @@ namespace WinUWP
         public ObservableCollection(IList<T> list) : base(list.ToList()) { }
         public ObservableCollection(IEnumerable<T> collection) : base(collection.ToList()) { }
 
-        public event Microsoft.UI.Xaml.Interop.NotifyCollectionChangedEventHandler CollectionChanged;
+        public event System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged;
 
         public void Move(int oldIndex, int newIndex)
         {
@@ -295,4 +295,5 @@ namespace WinUWP
 
         public bool HasCurrent => enumerator.Current != null;
     }
+#endif
 }

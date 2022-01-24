@@ -2,7 +2,7 @@
 using Microsoft.UI.Xaml.Controls;
 using System.Diagnostics;
 
-namespace WinUWP
+namespace WinUI3
 {
     public class MyButton : Button
     {
