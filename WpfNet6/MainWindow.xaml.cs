@@ -18,6 +18,7 @@ namespace WpfNet6
 
         public MainWindow()
         {
+            this.DataContext = this.ViewModel;
             this.InitializeComponent();
         }
 
