@@ -8,6 +8,9 @@
         Title="MainWindow" Height="450" Width="800"
         DataContext="{Binding ViewModel, RelativeSource={RelativeSource Mode=Self}}"
         d:DataContext="{d:DesignInstance local:MainWindowVM, IsDesignTimeCreatable=True}">
+    <Window.Resources>
+        <!--<local:AppendStringConverter x:Key="AppendString" />-->
+    </Window.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -24,7 +27,7 @@
             <ListView Margin="0,8,0,0" ItemsSource="{Binding People}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" /><!-- , Converter={StaticResource AppendString}, ConverterParameter=Suffix -->
                         <GridViewColumn Header="Age" Width="100" DisplayMemberBinding="{Binding Age}" />
                     </GridView>
                 </ListView.View>
@@ -52,7 +55,7 @@
             <Button Content="Clear" Command="{Binding ClearCommand}" />
             <Button Content="Test" Click="OnTest" />
             <local:MyButton Content="{Binding Foo1, RelativeSource={RelativeSource Mode=Self}}" />
-            <!--<local:MyButton2 Content="{Binding Foo1, RelativeSource={RelativeSource Mode=Self}}" />-->
+            <!--<local:MyButton2 Content="{Binding Foo1, RelativeSource={RelativeSource Mode=Self}}" Background="LightSalmon" />-->
         </StackPanel>
     </Grid>
 </Window>
