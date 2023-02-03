@@ -19,9 +19,12 @@
         <ListView Grid.Row="1" Margin="0,8,0,0" ItemsSource="{Binding People}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Person">
-                    <TextBlock>
-                        <Run Text="Name=" /><Run Text="{Binding Name}" /><Run Text=", Age=" /><Run Text="{Binding Age}" />
-                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock>
+                            <Run Text="Name=" /><Run Text="{Binding Name}" /><Run Text=", Age=" /><Run Text="{Binding Age}" />
+                        </TextBlock>
+                        <Button x:Name="BadButton" AutomationProperties.AutomationId="Hmm" Content="Button" />
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -4,6 +4,7 @@
              x:Class="MauiTest.MainPage"
              x:DataType="{x:Type local:MainVM}"
              BackgroundColor="{DynamicResource SecondaryColor}"
+             Title="MAUI Test"
              BindingContext="{Binding ViewModel, Source={RelativeSource Mode=Self}}">
 
     <Grid ColumnDefinitions="*,*" ColumnSpacing="8" Margin="8">
@@ -13,8 +14,9 @@
                     <DataTemplate x:DataType="{x:Type local:Person}">
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}" Margin="4" />
-                                <Label Text="{Binding Age}" Margin="4" />
+                                <Label x:Name="NameLabel" Text="{Binding Name}" Margin="4" />
+                                <Label x:Name="AgeLabel" Text="{Binding Age}" Margin="4" />
+                                <Button AutomationId="" x:Name="BadButton" Text="Button" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -23,11 +25,11 @@
         </Border>
         <StackLayout Grid.Column="1" Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Check1}"  />
+                <CheckBox AutomationId="CheckBox1" IsChecked="{Binding Check1}"  />
                 <Label Text="Checkbox 1" VerticalOptions="Center" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding Check2}" />
+                <CheckBox x:Name="CheckBox2Name" IsChecked="{Binding Check2}" />
                 <Label Text="Checkbox 2" VerticalOptions="Center"  />
             </StackLayout>
         </StackLayout>
