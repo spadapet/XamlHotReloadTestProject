@@ -8,22 +8,21 @@
              BindingContext="{Binding ViewModel, Source={RelativeSource Mode=Self}}">
 
     <Grid ColumnDefinitions="*,*" ColumnSpacing="8" Margin="8">
-        <Border StrokeThickness="2" Stroke="Black">
-            <ListView ItemsSource="{Binding People}">
-                <ListView.ItemTemplate>
+        <Label FontSize="Medium">My Application</Label>
+        <Border StrokeThickness="2" Stroke="Black" Margin="0,40,0,0" Padding="4">
+            <CollectionView ItemsSource="{Binding People}">
+                <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="{x:Type local:Person}">
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label x:Name="NameLabel" Text="{Binding Name}" Margin="4" />
-                                <Label x:Name="AgeLabel" Text="{Binding Age}" Margin="4" />
-                                <Button AutomationId="" x:Name="BadButton" Text="Button" />
-                            </StackLayout>
-                        </ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="4">
+                            <Label x:Name="NameLabel" Text="{Binding Name}" Margin="4" VerticalOptions="Center" FontAttributes="Italic" />
+                            <Label x:Name="AgeLabel" Text="{Binding Age}" Margin="4" VerticalOptions="Center" FontSize="Medium" />
+                            <Button AutomationId="" x:Name="BadButton" Text="Button" />
+                        </StackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </Border>
-        <StackLayout Grid.Column="1" Orientation="Vertical">
+        <StackLayout Grid.Column="1" Orientation="Vertical" Margin="0,40,0,0">
             <StackLayout Orientation="Horizontal">
                 <CheckBox AutomationId="CheckBox1" IsChecked="{Binding Check1}"  />
                 <Label Text="Checkbox 1" VerticalOptions="Center" />
@@ -32,6 +31,7 @@
                 <CheckBox x:Name="CheckBox2Name" IsChecked="{Binding Check2}" />
                 <Label Text="Checkbox 2" VerticalOptions="Center"  />
             </StackLayout>
+            <local:SomeContent />
         </StackLayout>
     </Grid>
 

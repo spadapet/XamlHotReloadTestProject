@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest.SomeContent">
+    <Border Stroke="Orange" StrokeThickness="4" Padding="10">
+        <StackLayout Grid.Column="1" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label VerticalOptions="Center">Name:</Label>
+                <Entry AutomationId="NameEntry" Margin="10,0,0,0" IsPassword="False" Text="Name" TextColor="Red" BackgroundColor="LightGray" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label VerticalOptions="Center">Password:</Label>
+                <Entry AutomationId="PasswordEntry" Margin="10,0,0,0" IsPassword="True" Text="Password" TextColor="Red" BackgroundColor="LightGray" />
+            </StackLayout>
+        </StackLayout>
+    </Border>
+</ContentView>
