@@ -51,7 +51,8 @@
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
 		<!--<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />-->
 		<!-- <PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.4" /> -->
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-preview.5.8578" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="7.0.100-dev" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="7.0.100-dev" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
