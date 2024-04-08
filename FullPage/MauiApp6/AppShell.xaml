@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp6.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp6"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MauiApp6">
+
+    <TabBar>
+        <Tab Title="Home 1">
+            <ShellContent Title="Home 1" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+        <Tab  Title="Home 2">
+            <ShellContent Title="Home 2" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+    </TabBar>
+
+</Shell>

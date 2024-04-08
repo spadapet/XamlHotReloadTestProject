@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="BlueButton" TargetType="Button">
+        <Setter Property="Background" Value="Blue" />
+        <!--<Setter Property="TextColor" Value="{x:Reference Foo2}" />-->
+        <Setter Property="TextColor" Value="Yellow" />
+        <Setter Property="Text" Value="Blue Button 5" />
+    </Style>
+
+</ResourceDictionary>

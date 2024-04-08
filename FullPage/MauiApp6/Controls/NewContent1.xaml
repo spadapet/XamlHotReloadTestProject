@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp6.Controls"
+             xmlns:libstyle="clr-namespace:MauiLib1.Styles;assembly=MauiLib1"
+             x:Class="MauiApp6.Controls.NewContent1"
+             x:DataType="{x:Type local:NewContentViewModel}"
+             BindingContext="{Binding ViewModel, Source={RelativeSource Mode=Self}}">
+    <VerticalStackLayout>
+        <VerticalStackLayout.Resources>
+            <ResourceDictionary Source="../Resources/Styles/Dictionary1.xaml">
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/Styles/Dictionary1.xaml;assembly=MauiLib1" />
+                    <!--<ResourceDictionary Source="/Styles/Dictionary2.xaml;assembly=MauiLib1" />-->
+                    <!--<libstyle:Dictionary1 />-->
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </VerticalStackLayout.Resources>
+        <Label x:Name="titleLabel" Text="Title label 18" HorizontalOptions="Center" />
+        <Label x:Name="titleLabel2" Text="Title label 2 17" HorizontalOptions="Center" />
+        <Label Text="{Binding Text, Source={x:Reference titleLabel}}" HorizontalOptions="Center" />
+        <!--<Label Text="{Binding Text, Source={x:Reference Foo}}" HorizontalOptions="Center" />
+        <Label Text="{Binding Text, Source={x:Reference Foo3}}" HorizontalOptions="Center" />-->
+        <Label Text="{Binding Title, StringFormat='Welcome {0} 10'}" HorizontalOptions="Center" />
+        <Button Style="{StaticResource ButtonTextFromStyle}" />
+        <!--<Border Stroke="Blue">
+            <Button Style="{StaticResource BlueButton}" />
+        </Border>-->
+        <Border Stroke="Red">
+            <Button Style="{StaticResource RedButton}" />
+        </Border>
+        <ListView ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:ItemViewModel">
+                    <ViewCell>
+                        <Border StrokeThickness="2" Stroke="LightBlue" Background="Blue" Padding="10">
+                            <Label Text="{Binding Title}" TextColor="Yellow" />
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentView>
