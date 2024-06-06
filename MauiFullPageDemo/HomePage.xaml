@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiDemo"
+             x:Class="MauiDemo.HomePage">
+    <ContentPage.Resources>
+        <!-- DEMO: Comment out ResourceDictionary -->
+        <ResourceDictionary Source="Resources\Styles\BadStyles.xaml" />
+    </ContentPage.Resources>
+
+    <ScrollView BindingContext="{x:Static local:AppShell.ViewModel}" x:DataType="{x:Type local:ViewModel}">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image Source="dotnet_bot.png" HeightRequest="128" Aspect="AspectFit" />
+            <Button x:Name="CounterBtn" Text="Click me" Clicked="OnCounterClicked" HorizontalOptions="Fill" />
+
+            <Label Text="Family:" />
+            <Border Stroke="White" StrokeThickness="2" Background="DarkBlue" Padding="10">
+                <CollectionView MinimumHeightRequest="200" ItemsSource="{Binding Family}">
+                    <CollectionView.EmptyView>
+                        <Label Text="No items to display" />
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type local:Person}">
+                            <HorizontalStackLayout Spacing="4">
+                                <RoundRectangle WidthRequest="32" HeightRequest="32" Background="{Binding FavoriteColor}" CornerRadius="5" />
+                                <Label Text="{Binding Name, StringFormat='{}{0}, Age='}" VerticalOptions="Center" />
+                                <Label Text="{Binding Age}" VerticalOptions="Center" />
+                            </HorizontalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
