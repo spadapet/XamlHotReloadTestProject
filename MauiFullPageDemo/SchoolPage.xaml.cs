@@ -11,7 +11,8 @@ public partial class SchoolPage : ContentPage
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
-		count += 2;
+		// VSCode DEMO: Increment by 1 instead of 10
+		count += 10;
 
 		if (count == 1)
 			CounterBtn.Text = $"Clicked {count} time";
