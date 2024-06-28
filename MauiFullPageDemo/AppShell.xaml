@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiDemo"
     Shell.FlyoutBehavior="Locked"
-    Shell.FlyoutWidth="150"
+    Shell.FlyoutWidth="120"
     Title="MauiDemo">
 
     <ShellContent

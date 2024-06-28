@@ -14,7 +14,9 @@
                 <CollectionView MinimumHeightRequest="200" ItemsSource="{Binding Employees}">
                     <!-- DEMO: Comment EmptyView -->
                     <CollectionView.EmptyView>
-                        <Label Text="No items to display" />
+                        <Border Stroke="Black" StrokeThickness="4" Background="LightPink" Padding="10">
+                            <Label Text="Delete this!" FontSize="42" TextColor="Black" />
+                        </Border>
                     </CollectionView.EmptyView>
                 </CollectionView>
             </Border>            
